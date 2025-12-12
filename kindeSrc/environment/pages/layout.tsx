@@ -110,6 +110,13 @@ export const Layout = ({
                 justify-content: center;
                 align-items: center;
                 flex: 1 0 0;
+                max-width:480px
+              }
+
+              .login-form-wrapper .kinde-form-field-variant-select-text {
+                display: inline-block;
+                width: 100%:
+                max-width : 236px
               }
 
               .signInFormTextTopText,
