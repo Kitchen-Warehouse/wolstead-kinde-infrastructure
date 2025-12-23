@@ -416,6 +416,7 @@ export const Layout = ({
                 display: flex;
                 align-items: center;
                 text-align: center;
+                justify-content: center;
                 color: #1a1a1a;                
                 font-size: 16px;
                 font-style: normal;
@@ -427,7 +428,7 @@ export const Layout = ({
 
               .kinde-choice-separator::before,
               .kinde-choice-separator::after {
-                content: '';
+                content: 'Hello';
                 flex: 1;
                 border-bottom: 1px solid #1a1a1a; /* line color */
               }
