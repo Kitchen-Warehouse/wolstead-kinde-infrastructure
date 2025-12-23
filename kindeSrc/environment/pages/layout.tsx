@@ -413,10 +413,8 @@ export const Layout = ({
               }
 
               .kinde-choice-separator {
-                display: flex;
-                align-items: center;
+                display: block;
                 text-align: center;
-                justify-content: center;
                 color: #1a1a1a;                
                 font-size: 16px;
                 font-style: normal;
@@ -424,22 +422,23 @@ export const Layout = ({
                 line-height: 24px;
                 letter-spacing: -0.16px;
                 width: 100%;
+
+                background-image:
+                  linear-gradient(#1a1a1a, #1a1a1a),
+                  linear-gradient(#1a1a1a, #1a1a1a);
+
+                background-size:
+                  calc(50% - 20px) 1px,
+                  calc(50% - 20px) 1px;
+
+                background-position:
+                  left center,
+                  right center;
+
+                background-repeat: no-repeat;
               }
 
-              .kinde-choice-separator::before,
-              .kinde-choice-separator::after {
-                content: " ";
-                flex: 1;
-                border-bottom: 1px solid #1a1a1a; /* line color */
-              }
-                
-              .kinde-choice-separator::before {
-                margin-right: 12px;
-              }
-
-              .kinde-choice-separator::after {
-                margin-left: 12px;
-              }
+             
 
               .kinde-fallback-action {
                 color: #1a1a1a;                
