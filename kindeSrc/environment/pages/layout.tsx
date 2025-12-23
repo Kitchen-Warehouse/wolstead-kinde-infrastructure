@@ -27,7 +27,7 @@ export const Layout = ({
   children,
   props,
 }: LayoutProps): React.JSX.Element => {
-  const { helpText, helpNumber, paymentLogos } = props ?? {}
+  const { logo, helpText, helpNumber, paymentLogos } = props ?? {}
   return (
     <html lang={request.locale.lang}>
       <head>
@@ -127,13 +127,14 @@ export const Layout = ({
                 justify-content: center;
                 align-items: center;
                 flex: 1 0 0;
-                max-width:480px
+                max-width:480px;
+								margin: 0 auto;
+								padding: 176px 0;
               }
 
               .login-form-wrapper .kinde-form-field-variant-select-text {
                 display: inline-block;
-                width: 100%:
-                max-width : 236px
+                width: 100%;
               }
 
               .signInFormTextTopText,
@@ -370,11 +371,10 @@ export const Layout = ({
               }
 
               .kinde-control-label {
-                color: #1a1a1a;
-                font-size: 14px;
+                color: #000;
+                font-size: 16px;
                 line-height: 20px;
-                letter-spacing: -0.14px;
-                padding-block-end: 4px;
+								padding-block-end: 4px;
               }
 
               .kinde-button-variant-primary {
@@ -667,14 +667,43 @@ export const Layout = ({
         />
       </head>
       <body style={{ display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <main
-            data-roast-root='true'
-            data-kinde-root='true'
-            className='content-container'>
-            {children}
-          </main>
-        </div>
+        {logo && (
+          <header
+            style={{
+              position: 'absolute',
+              top: '40px',
+              left: '40px',
+            }}>
+            <div className='header-container'>
+              <div className='header-content'>
+                <a href='https://www.wolstead.com/'>
+                  <div className='logo-wrapper'>
+                    <picture>
+                      <source
+                        media='(prefers-color-scheme: dark)'
+                        srcSet={logo}
+                      />
+                      <img
+                        className='logo'
+                        src={logo}
+                        alt={context.widget.content.logoAlt}
+                        width={152}
+                        height={32}
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </header>
+        )}
+        <main
+          data-roast-root='true'
+          data-kinde-root='true'
+          className='content-container'>
+          {children}
+        </main>
+
         <footer>
           <div style={{ paddingBottom: '2.5rem' }}>
             {/* separator */}

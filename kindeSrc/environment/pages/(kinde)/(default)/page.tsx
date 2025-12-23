@@ -24,7 +24,6 @@ const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
     signupFormTextTop,
     signInFormTextBottom,
     signupFormTextBottom,
-    logo,
   } = res?.data?.results?.[0]?.data || {}
   const isUserOnLoginOrRegisterPage = request?.route?.flow
 
@@ -35,32 +34,6 @@ const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
       props={res?.data?.results?.[0]?.data}>
       <div className='container'>
         <div className='login-form-wrapper'>
-          {logo && (
-            <header>
-              <div className='header-container'>
-                <div className='header-content'>
-                  <a href='https://www.wolstead.com/'>
-                    <div className='logo-wrapper'>
-                      <picture>
-                        <source
-                          media='(prefers-color-scheme: dark)'
-                          srcSet={logo}
-                        />
-                        <img
-                          className='logo'
-                          src={logo}
-                          alt={context.widget.content.logoAlt}
-                          width={152}
-                          height={32}
-                        />
-                      </picture>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </header>
-          )}
-
           {signInFormTextTop && isUserOnLoginOrRegisterPage === 'login' && (
             <div
               className='signInFormTextTopText'
