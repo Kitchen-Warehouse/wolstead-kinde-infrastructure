@@ -124,8 +124,8 @@ export const Layout = ({
                 align-items: center;
                 flex: 1 0 0;
                 max-width:480px;
-								margin: 0 auto;
-								padding: 176px 0;
+                margin: 0 auto;
+                padding: 176px 0;
               }
 
               .login-form-wrapper .kinde-form-field-variant-select-text {
@@ -357,10 +357,11 @@ export const Layout = ({
 
               .heading {
                 font-size: 27px;
-								font-style: normal;
-								font-weight: 600;
-								line-height: 120%;
-								letter-spacing: -0.27px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+                letter-spacing: -0.27px;
+                color: #1a1a1a;
               }
 
               .logo-wrapper {
@@ -378,8 +379,8 @@ export const Layout = ({
                 color: #000;
                 font-size: 16px;
                 line-height: normal;
-								font-weight: 400;
-								padding-block-end: 4px;
+                font-weight: 400;
+                padding-block-end: 4px;
               }
 
               .kinde-button-variant-primary {
@@ -387,8 +388,12 @@ export const Layout = ({
               }
 
               .kinde-button-variant-primary:hover {
-                background-color: #aa2a22;
+                background-color: #333;
               }
+
+              .kinde-button-variant-secondary {
+                background-color: #fff;
+              }            
 
               .kinde-control-select-text:focus-visible {
                 border: 0.0625rem solid #ababab;
@@ -397,10 +402,10 @@ export const Layout = ({
 
               .kinde-button-text {
                 font-size: 20px;
-								font-style: normal;
-								line-height: 120%;
+                font-style: normal;
+                line-height: 120%;
                 letter-spacing: -0.36px;
-								font-weight: 400;
+                font-weight: 400;
               }
 
               .kinde-text-button {
@@ -408,9 +413,27 @@ export const Layout = ({
               }
 
               .kinde-choice-separator {
-                color: #1a1a1a;
-                line-height: 150%;
+                color: #1a1a1a;                
+                font-size: 16px
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px
                 letter-spacing: -0.16px;
+              }
+
+              .kinde-choice-separator::before,
+              .kinde-choice-separator::after {
+                content: '';
+                flex: 1;
+                border-bottom: 1px solid #1a1a1a; /* line color */
+              }
+                
+              .kinde-choice-separator::before {
+                margin-right: 12px;
+              }
+
+              .kinde-choice-separator::after {
+                margin-left: 12px;
               }
 
               .kinde-fallback-action {
