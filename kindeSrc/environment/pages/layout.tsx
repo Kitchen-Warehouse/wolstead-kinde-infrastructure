@@ -27,7 +27,7 @@ export const Layout = ({
   children,
   props,
 }: LayoutProps): React.JSX.Element => {
-  const { logo, helpText, helpNumber, paymentLogos } = props ?? {}
+  const { helpText, helpNumber, paymentLogos } = props ?? {}
   return (
     <html lang={request.locale.lang}>
       <head>
@@ -668,31 +668,6 @@ export const Layout = ({
       </head>
       <body style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          {logo && (
-            <header>
-              <div className='header-container'>
-                <div className='header-content'>
-                  <a href='https://www.wolstead.com/'>
-                    <div className='logo-wrapper'>
-                      <picture>
-                        <source
-                          media='(prefers-color-scheme: dark)'
-                          srcSet={logo}
-                        />
-                        <img
-                          className='logo'
-                          src={logo}
-                          alt={context.widget.content.logoAlt}
-                          width={152}
-                          height={32}
-                        />
-                      </picture>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </header>
-          )}
           <main
             data-roast-root='true'
             data-kinde-root='true'
