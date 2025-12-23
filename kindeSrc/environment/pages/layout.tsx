@@ -414,10 +414,10 @@ export const Layout = ({
 
               .kinde-choice-separator {
                 color: #1a1a1a;                
-                font-size: 16px
+                font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 24px
+                line-height: 24px;
                 letter-spacing: -0.16px;
               }
 
@@ -437,8 +437,11 @@ export const Layout = ({
               }
 
               .kinde-fallback-action {
-                color: #1a1a1a;
-                line-height: 150%;
+                color: #1a1a1a;                
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
                 letter-spacing: -0.16px;
               }
 
