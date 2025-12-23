@@ -413,12 +413,16 @@ export const Layout = ({
               }
 
               .kinde-choice-separator {
+                display: flex;
+                align-items: center;
+                text-align: center;
                 color: #1a1a1a;                
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 24px;
                 letter-spacing: -0.16px;
+                width: 100%;
               }
 
               .kinde-choice-separator::before,
