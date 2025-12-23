@@ -428,7 +428,7 @@ export const Layout = ({
 
               .kinde-choice-separator::before,
               .kinde-choice-separator::after {
-                content: 'Hello';
+                content: "";
                 flex: 1;
                 border-bottom: 1px solid #1a1a1a; /* line color */
               }
