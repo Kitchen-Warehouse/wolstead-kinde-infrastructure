@@ -128,7 +128,19 @@ export const Layout = ({
                 padding: 176px 0;
               }
 
-              .login-form-wrapper .kinde-form-field-variant-select-text {
+              .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
+                display: inline-block;
+                width: calc(50% - 4px);
+                margin-right: 4px;
+              }
+
+              .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+                display: inline-block;
+                width: calc(50% - 4px);
+                margin-left: 4px;
+              }
+
+              .login-form-wrapper .kinde-form-field-variant-select-text:last-of-type {
                 display: inline-block;
                 width: 100%;
               }
@@ -438,8 +450,6 @@ export const Layout = ({
                 background-repeat: no-repeat;
               }
 
-             
-
               .kinde-fallback-action {
                 color: #1a1a1a;                
                 font-size: 16px;
@@ -456,7 +466,7 @@ export const Layout = ({
               }
 
               .kinde-text-link {
-                font-weight: 600;
+                font-weight: 400;
               }
 
               .side-panel {
