@@ -59,10 +59,6 @@ export const Layout = ({
         {getKindeRequiredJS()}
         <style nonce={getKindeNonce()}>
           {`
-              .header-container {
-                padding: 1rem 2rem;
-              }
-
               .header-content {
                 display: flex;
                 width: 100%;
@@ -359,6 +355,14 @@ export const Layout = ({
                 font-family: Inter, sans-serif;
               }
 
+              .heading {
+                font-size: 27px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: 120%;
+								letter-spacing: -0.27px;
+              }
+
               .logo-wrapper {
                 display: flex;
                 justify-content: center;
@@ -373,12 +377,13 @@ export const Layout = ({
               .kinde-control-label {
                 color: #000;
                 font-size: 16px;
-                line-height: 20px;
+                line-height: normal;
+								font-weight: 400;
 								padding-block-end: 4px;
               }
 
               .kinde-button-variant-primary {
-                background-color: #d4352b;
+                background-color: #1a1a1a;
               }
 
               .kinde-button-variant-primary:hover {
@@ -391,10 +396,11 @@ export const Layout = ({
               }
 
               .kinde-button-text {
-                font-size: 18px;
-                line-height: 28px;
+                font-size: 20px;
+								font-style: normal;
+								line-height: 120%;
                 letter-spacing: -0.36px;
-                font-weight: 600;
+								font-weight: 400;
               }
 
               .kinde-text-button {
