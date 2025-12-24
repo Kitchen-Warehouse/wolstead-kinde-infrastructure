@@ -61,23 +61,23 @@ export const Layout = ({
         <style nonce={getKindeNonce()}>
           {`
           @font-face {
-            font-family: 'Test Soehne';
-            src: url('https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2') format('woff2');
+            font-family: TestSoehne;
+            src: url(https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2) format(woff2);
             font-weight: 400;
             font-style: normal;
             font-display: swap;
           }
 
           @font-face {
-            font-family: 'Test Soehne';
-            src: url('https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2') format('woff2');
+            font-family: TestSoehne;
+            src: url(https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2) format(woff2);
             font-weight: 500;
             font-style: normal;
             font-display: swap;
           }
 
           html, body {
-            font-family: 'Test Soehne', system-ui, -apple-system, sans-serif;
+            font-family: TestSoehne, system-ui, -apple-system, sans-serif;
           }
 
           input, textarea, button, select {
