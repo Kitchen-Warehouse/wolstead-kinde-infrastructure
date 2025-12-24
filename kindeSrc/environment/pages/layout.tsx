@@ -113,7 +113,7 @@ export const Layout = ({
               .content-container {
                 display: flex;
                 align-items: center;
-                margin: 0 auto;
+                margin: 0 20px;
                 max-width: 1440px;
                 flex: 1 0 0;
               }
@@ -181,6 +181,7 @@ export const Layout = ({
               .login-form-wrapper .kinde-form-field-variant-select-text:last-of-type {
                 display: inline-block;
                 width: 100%;
+								margin-right: 0;
               }
 
               .signInFormTextTopText,
@@ -404,6 +405,10 @@ export const Layout = ({
                 display: flex;
                 justify-content: center;
               }
+
+							.logo-wrapper img {
+								height: 32px
+							}
 
               .description {
                 color: #1a1a1a;

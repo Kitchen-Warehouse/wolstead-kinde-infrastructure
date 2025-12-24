@@ -6,7 +6,6 @@ import {
   type KindePageEvent,
 } from '@kinde/infrastructure'
 import React from 'react'
-// @ts-expect-error: renderToString is not available in the server environment
 import { renderToString } from 'react-dom/server.browser'
 import Layout from '../../layout'
 
