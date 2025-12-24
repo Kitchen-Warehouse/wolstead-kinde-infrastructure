@@ -11,6 +11,22 @@ import {
 } from '@kinde/infrastructure'
 import React from 'react'
 
+import localFont from 'next/font/local'
+
+const testSoehne = localFont({
+  src: [
+    {
+      path: '../public/fonts/Soehne-buch.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-test-soehne',
+  display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+  preload: true,
+})
+
 interface LayoutProps extends KindePageEvent {
   children: React.ReactNode
   props: {
@@ -77,7 +93,6 @@ export const Layout = ({
               }
 
               .secure-login {
-                font-family: Inter, sans-serif;
                 color: #666666;
                 font-size: 0.875rem;
                 line-height: 1.25rem;
@@ -150,7 +165,6 @@ export const Layout = ({
               .signInFormTextBottomText,
               .signupFormTextBottom {
                 color: #1a1a1a;
-                font-family: Inter, sans-serif;
                 hr {
                   margin: 20px 0;
                   border-color: #e6e6e6;
@@ -197,7 +211,6 @@ export const Layout = ({
 
                 h1,
                 h1 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.875rem;
                   font-weight: 600;
                   line-height: 1.9375rem;
@@ -207,7 +220,6 @@ export const Layout = ({
 
                 h2,
                 h2 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.75rem;
                   font-weight: 600;
                   line-height: 2.625rem;
@@ -218,7 +230,6 @@ export const Layout = ({
                 h3,
                 h3 a {
                   margin-top: 32px;
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.5rem;
                   font-weight: 600;
                   line-height: 1.5625rem;
@@ -232,7 +243,6 @@ export const Layout = ({
                 h5 a,
                 h6,
                 h6 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.25rem;
                   font-weight: 600;
                   line-height: 1.25rem;
@@ -245,7 +255,6 @@ export const Layout = ({
                 ul,
                 li,
                 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 0.875rem;
                   font-weight: 400;
                   line-height: 1.5rem;
@@ -274,7 +283,6 @@ export const Layout = ({
                 blockquote {
                   border-left: 2px solid #ff3f33;
                   padding-left: 20px;
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.125rem;
                   font-style: italic;
                   font-weight: 400;
@@ -286,7 +294,6 @@ export const Layout = ({
                 @media screen and (min-width: 1024px) {
                   h1,
                   h1 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 3rem;
                     font-weight: 600;
                     line-height: 3.75rem;
@@ -296,7 +303,6 @@ export const Layout = ({
 
                   h2,
                   h2 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 2.25rem;
                     font-weight: 600;
                     line-height: 2.75rem;
@@ -306,7 +312,6 @@ export const Layout = ({
 
                   h3,
                   h3 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.875rem;
                     font-weight: 600;
                     line-height: 2.375rem;
@@ -320,7 +325,6 @@ export const Layout = ({
                   h5 a,
                   h6,
                   h6 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.5rem;
                     font-weight: 600;
                     line-height: 2rem;
@@ -333,7 +337,6 @@ export const Layout = ({
                   ul,
                   li,
                   a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1rem;
                     font-weight: 400;
                     line-height: 1.5rem;
@@ -347,7 +350,6 @@ export const Layout = ({
                   }
 
                   blockquote {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.25rem;
                     font-style: italic;
                     line-height: 1.875rem;
@@ -364,7 +366,6 @@ export const Layout = ({
                 gap: 24px;
                 width: 100%;
                 max-width: 578px;
-                font-family: Inter, sans-serif;
               }
 
               .heading {
@@ -712,7 +713,12 @@ export const Layout = ({
           }}
         />
       </head>
-      <body style={{ display: 'flex', flexDirection: 'column' }}>
+      <body
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+        className={testSoehne.className}>
         {logo && (
           <header
             style={{
