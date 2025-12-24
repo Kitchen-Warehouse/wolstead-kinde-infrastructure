@@ -93,10 +93,6 @@ export const Layout = ({
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0.5rem 0;
-                @media screen and (max-width: 1275px) {
-                  padding: 0.25rem 0;
-                }
               }
 
               .secure-login-container {
@@ -153,20 +149,34 @@ export const Layout = ({
                 flex: 1 0 0;
                 max-width:480px;
                 margin: 0 auto;
-                padding: 176px 0;
-              }
+                padding: 40px 0;
+							}
 
               .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
                 display: inline-block;
-                width: calc(50% - 4px);
-                margin-right: 4px;
+                width: 100%;
               }
 
-              .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+							 .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
                 display: inline-block;
-                width: calc(50% - 4px);
-                margin-left: 4px;
+                width: 100%;
               }
+							
+							@media screen and (min-width: 480px) {
+								.login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
+									width: calc(50% - 4px);
+									margin-right: 4px;
+								}
+									
+							  .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+									width: calc(50% - 4px);
+									margin-left: 4px;
+								}
+
+								.login-form-wrapper {
+									padding: 176px 0;
+							 }
+							}
 
               .login-form-wrapper .kinde-form-field-variant-select-text:last-of-type {
                 display: inline-block;

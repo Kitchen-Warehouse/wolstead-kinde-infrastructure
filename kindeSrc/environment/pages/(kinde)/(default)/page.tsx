@@ -12,7 +12,7 @@ import Layout from '../../layout'
 
 const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
   const res = await fetch(
-    'https://cdn.builder.io/api/v3/content/login-page-data?apiKey=a7c381190234474abfe53a65baa3bdec&sort.createdDate=-1',
+    'https://cdn.builder.io/api/v3/content/login-page-data?apiKey=a7c381190234474abfe53a65baa3bdec&sort.createdDate=-1&query.data.siteKey=wlsd',
     {
       headers: {},
       method: 'GET',
