@@ -11,22 +11,6 @@ import {
 } from '@kinde/infrastructure'
 import React from 'react'
 
-import localFont from 'next/font/local'
-
-const testSoehne = localFont({
-  src: [
-    {
-      path: '../public/fonts/Soehne-buch.woff2',
-      weight: '100 900',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-test-soehne',
-  display: 'swap',
-  fallback: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-  preload: true,
-})
-
 interface LayoutProps extends KindePageEvent {
   children: React.ReactNode
   props: {
@@ -73,6 +57,35 @@ export const Layout = ({
         />
         {getKindeRequiredCSS()}
         {getKindeRequiredJS()}
+
+        <style nonce={getKindeNonce()}>
+          {`
+          @font-face {
+            font-family: 'Test Soehne';
+            src: url('https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+          }
+
+          @font-face {
+            font-family: 'Test Soehne';
+            src: url('https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+          }
+
+          html, body {
+            font-family: 'Test Soehne', system-ui, -apple-system, sans-serif;
+          }
+
+          input, textarea, button, select {
+            font-family: inherit;
+          }
+        `}
+        </style>
+
         <style nonce={getKindeNonce()}>
           {`
               .header-content {
@@ -717,8 +730,7 @@ export const Layout = ({
         style={{
           display: 'flex',
           flexDirection: 'column',
-        }}
-        className={testSoehne.className}>
+        }}>
         {logo && (
           <header
             style={{
