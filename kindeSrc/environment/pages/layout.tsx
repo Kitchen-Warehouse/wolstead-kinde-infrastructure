@@ -796,7 +796,6 @@ export const Layout = ({
                 {helpText && (
                   <span
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       fontSize: '0.875rem',
                       lineHeight: '1.25rem',
                       letterSpacing: '-0.14px',
@@ -813,7 +812,6 @@ export const Layout = ({
                       style={{ color: '#1a1a1a' }}>
                       <span
                         style={{
-                          fontFamily: 'Inter, sans-serif',
                           fontSize: '0.875rem',
                           lineHeight: '1.25rem',
                           letterSpacing: '-0.14px',
