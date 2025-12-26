@@ -136,11 +136,13 @@ export const Layout = ({
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 width: 100%;
                 justify-content: center;
-                gap: 3rem;
                 align-items: center;
                 @media screen and (max-width: 1275px) {
                   grid-template-columns: repeat(1, minmax(0, 1fr));
-                  padding: 0 20px;
+                }
+
+                @media screen and (min-width: 1276px) {
+                  gap: 3rem;
                 }
               }
 
@@ -183,7 +185,12 @@ export const Layout = ({
               .data-kinde-choice-separator {
                 margin-bottom: 16px;
               }
-              
+
+              @media screen and (min-width: 1276px) {
+               .login-form-wrapper {
+                  padding: 176px 0;	
+              }
+
               @media screen and (min-width: 480px) {
                 .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
                   width: calc(50% - 4px);
@@ -194,10 +201,6 @@ export const Layout = ({
                   width: calc(50% - 4px);
                   margin-left: 4px;
                 }
-
-                .login-form-wrapper {
-                  padding: 176px 0;	
-          }
                   
                  .kinde-form-field-variant-select-text {
                   margin-bottom: 16px;
@@ -548,6 +551,7 @@ export const Layout = ({
               .side-panel {
                 display: flex;
                 height: 100%;
+                margin: 0 -20px;
                 
                 .side-panel-image {
                   width: 100%;
