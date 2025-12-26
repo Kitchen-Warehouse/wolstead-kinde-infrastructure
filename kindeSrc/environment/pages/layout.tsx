@@ -137,12 +137,10 @@ export const Layout = ({
                 width: 100%;
                 justify-content: center;
                 align-items: center;
-                @media screen and (max-width: 1275px) {
-                  grid-template-columns: repeat(1, minmax(0, 1fr));
-                }
 
-                @media screen and (min-width: 1276px) {
-                  gap: 3rem;
+                @media screen and (max-width: 1023px) {
+                  grid-template-columns: repeat(1, minmax(0, 1fr));
+									gap: 3rem;
                 }
               }
 
@@ -186,7 +184,7 @@ export const Layout = ({
                 margin-bottom: 16px;
               }
 
-              @media screen and (min-width: 1276px) {
+              @media screen and (min-width: 1024px) {
                .login-form-wrapper {
                   padding: 176px 0;	
               }
