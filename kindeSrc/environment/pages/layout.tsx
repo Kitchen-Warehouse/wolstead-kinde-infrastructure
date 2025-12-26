@@ -766,7 +766,7 @@ export const Layout = ({
                         className='logo'
                         src={logo}
                         alt={context.widget.content.logoAlt}
-                        width={152}
+                        width={186.794}
                         height={32}
                       />
                     </picture>
