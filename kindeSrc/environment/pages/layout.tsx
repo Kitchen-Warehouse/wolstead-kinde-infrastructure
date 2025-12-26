@@ -88,6 +88,19 @@ export const Layout = ({
 
         <style nonce={getKindeNonce()}>
           {`
+              .header {
+                position: absolute;
+                top: 40px;
+                left: 40px;
+              }
+              
+              @media screen and (max-width: 767px) {
+                .header {
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+              }
+
               .header-content {
                 display: flex;
                 width: 100%;
@@ -127,7 +140,7 @@ export const Layout = ({
                 align-items: center;
                 @media screen and (max-width: 1275px) {
                   grid-template-columns: repeat(1, minmax(0, 1fr));
-                  padding: 20px;
+                  padding: 0 20px;
                 }
               }
 
@@ -149,39 +162,53 @@ export const Layout = ({
                 flex: 1 0 0;
                 max-width:480px;
                 margin: 0 auto;
-                padding: 40px 0;
-							}
+                padding: 112px 0 40px;
+              }
 
               .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
                 display: inline-block;
                 width: 100%;
               }
 
-							 .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+               .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
                 display: inline-block;
                 width: 100%;
               }
-							
-							@media screen and (min-width: 480px) {
-								.login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
-									width: calc(50% - 4px);
-									margin-right: 4px;
-								}
-									
-							  .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
-									width: calc(50% - 4px);
-									margin-left: 4px;
-								}
 
-								.login-form-wrapper {
-									padding: 176px 0;
-							 }
-							}
+              .kinde-form-field-variant-select-text {
+                margin-bottom: 8px;
+              }
+
+              .kinde-form,
+              .data-kinde-choice-separator {
+                margin-bottom: 16px;
+              }
+              
+              @media screen and (min-width: 480px) {
+                .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
+                  width: calc(50% - 4px);
+                  margin-right: 4px;
+                }
+                  
+                .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+                  width: calc(50% - 4px);
+                  margin-left: 4px;
+                }
+
+                .login-form-wrapper {
+                  padding: 176px 0;	
+          }
+                  
+                 .kinde-form-field-variant-select-text {
+                  margin-bottom: 16px;
+                }
+              }
 
               .login-form-wrapper .kinde-form-field-variant-select-text:last-of-type {
                 display: inline-block;
                 width: 100%;
-								margin-right: 0;
+                margin-right: 0;
+                margin-bottom: 16px;
               }
 
               .signInFormTextTopText,
@@ -401,14 +428,25 @@ export const Layout = ({
                 color: #1a1a1a;
               }
 
+              @media screen and (max-width: 767px) {
+                .heading {
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 120%;
+                  letter-spacing: -0.18px;
+                  color: #1a1a1a;
+                }
+              }
+
               .logo-wrapper {
                 display: flex;
                 justify-content: center;
               }
 
-							.logo-wrapper img {
-								height: 32px
-							}
+              .logo-wrapper img {
+                height: 32px
+              }
 
               .description {
                 color: #1a1a1a;
@@ -447,6 +485,15 @@ export const Layout = ({
                 line-height: 120%;
                 letter-spacing: -0.36px;
                 font-weight: 400;
+              }
+
+              @media screen and (max-width: 767px) {
+              .kinde-button-text {
+                  font-size: 16px;
+                  font-style: normal;
+                  line-height: normal;
+                  font-weight: 400;
+                }
               }
 
               .kinde-text-button {
@@ -501,9 +548,7 @@ export const Layout = ({
               .side-panel {
                 display: flex;
                 height: 100%;
-                @media screen and (max-width: 1275px) {
-                  display: none;
-                }
+                
                 .side-panel-image {
                   width: 100%;
                   height: 100%;
@@ -747,12 +792,7 @@ export const Layout = ({
           flexDirection: 'column',
         }}>
         {logo && (
-          <header
-            style={{
-              position: 'absolute',
-              top: '40px',
-              left: '40px',
-            }}>
+          <header className='header'>
             <div className='header-container'>
               <div className='header-content'>
                 <a href='https://www.wolstead.com/'>
