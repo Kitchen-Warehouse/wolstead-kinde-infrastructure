@@ -57,21 +57,42 @@ export const Layout = ({
         />
         {getKindeRequiredCSS()}
         {getKindeRequiredJS()}
+
         <style nonce={getKindeNonce()}>
           {`
-              .header-container {
-                padding: 1rem 2rem;
-              }
+          @font-face {
+            font-family: TestSoehne;
+            src: url(https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2) format(woff2);
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+          }
 
+          @font-face {
+            font-family: TestSoehne;
+            src: url(https://staging.wolstead.com.au/fonts/Soehne-Buch.woff2) format(woff2);
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+          }
+
+          html, body {
+            font-family: TestSoehne, system-ui, -apple-system, sans-serif;
+          }
+
+          input, textarea, button, select {
+            font-family: inherit;
+          }
+        `}
+        </style>
+
+        <style nonce={getKindeNonce()}>
+          {`
               .header-content {
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0.5rem 0;
-                @media screen and (max-width: 1275px) {
-                  padding: 0.25rem 0;
-                }
               }
 
               .secure-login-container {
@@ -81,7 +102,6 @@ export const Layout = ({
               }
 
               .secure-login {
-                font-family: Inter, sans-serif;
                 color: #666666;
                 font-size: 0.875rem;
                 line-height: 1.25rem;
@@ -93,7 +113,7 @@ export const Layout = ({
               .content-container {
                 display: flex;
                 align-items: center;
-                margin: 0 auto;
+                margin: 0 20px;
                 max-width: 1440px;
                 flex: 1 0 0;
               }
@@ -127,6 +147,41 @@ export const Layout = ({
                 justify-content: center;
                 align-items: center;
                 flex: 1 0 0;
+                max-width:480px;
+                margin: 0 auto;
+                padding: 40px 0;
+							}
+
+              .login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
+                display: inline-block;
+                width: 100%;
+              }
+
+							 .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+                display: inline-block;
+                width: 100%;
+              }
+							
+							@media screen and (min-width: 480px) {
+								.login-form-wrapper .kinde-form-field-variant-select-text:first-of-type {
+									width: calc(50% - 4px);
+									margin-right: 4px;
+								}
+									
+							  .login-form-wrapper .kinde-form-field-variant-select-text:nth-of-type(2) {
+									width: calc(50% - 4px);
+									margin-left: 4px;
+								}
+
+								.login-form-wrapper {
+									padding: 176px 0;
+							 }
+							}
+
+              .login-form-wrapper .kinde-form-field-variant-select-text:last-of-type {
+                display: inline-block;
+                width: 100%;
+								margin-right: 0;
               }
 
               .signInFormTextTopText,
@@ -134,7 +189,6 @@ export const Layout = ({
               .signInFormTextBottomText,
               .signupFormTextBottom {
                 color: #1a1a1a;
-                font-family: Inter, sans-serif;
                 hr {
                   margin: 20px 0;
                   border-color: #e6e6e6;
@@ -181,7 +235,6 @@ export const Layout = ({
 
                 h1,
                 h1 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.875rem;
                   font-weight: 600;
                   line-height: 1.9375rem;
@@ -191,7 +244,6 @@ export const Layout = ({
 
                 h2,
                 h2 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.75rem;
                   font-weight: 600;
                   line-height: 2.625rem;
@@ -202,7 +254,6 @@ export const Layout = ({
                 h3,
                 h3 a {
                   margin-top: 32px;
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.5rem;
                   font-weight: 600;
                   line-height: 1.5625rem;
@@ -216,7 +267,6 @@ export const Layout = ({
                 h5 a,
                 h6,
                 h6 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.25rem;
                   font-weight: 600;
                   line-height: 1.25rem;
@@ -229,7 +279,6 @@ export const Layout = ({
                 ul,
                 li,
                 a {
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 0.875rem;
                   font-weight: 400;
                   line-height: 1.5rem;
@@ -258,7 +307,6 @@ export const Layout = ({
                 blockquote {
                   border-left: 2px solid #ff3f33;
                   padding-left: 20px;
-                  font-family: Inter, system-ui, sans-serif;
                   font-size: 1.125rem;
                   font-style: italic;
                   font-weight: 400;
@@ -270,7 +318,6 @@ export const Layout = ({
                 @media screen and (min-width: 1024px) {
                   h1,
                   h1 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 3rem;
                     font-weight: 600;
                     line-height: 3.75rem;
@@ -280,7 +327,6 @@ export const Layout = ({
 
                   h2,
                   h2 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 2.25rem;
                     font-weight: 600;
                     line-height: 2.75rem;
@@ -290,7 +336,6 @@ export const Layout = ({
 
                   h3,
                   h3 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.875rem;
                     font-weight: 600;
                     line-height: 2.375rem;
@@ -304,7 +349,6 @@ export const Layout = ({
                   h5 a,
                   h6,
                   h6 a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.5rem;
                     font-weight: 600;
                     line-height: 2rem;
@@ -317,7 +361,6 @@ export const Layout = ({
                   ul,
                   li,
                   a {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1rem;
                     font-weight: 400;
                     line-height: 1.5rem;
@@ -331,7 +374,6 @@ export const Layout = ({
                   }
 
                   blockquote {
-                    font-family: Inter, system-ui, sans-serif;
                     font-size: 1.25rem;
                     font-style: italic;
                     line-height: 1.875rem;
@@ -348,13 +390,25 @@ export const Layout = ({
                 gap: 24px;
                 width: 100%;
                 max-width: 578px;
-                font-family: Inter, sans-serif;
+              }
+
+              .heading {
+                font-size: 27px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+                letter-spacing: -0.27px;
+                color: #1a1a1a;
               }
 
               .logo-wrapper {
                 display: flex;
                 justify-content: center;
               }
+
+							.logo-wrapper img {
+								height: 32px
+							}
 
               .description {
                 color: #1a1a1a;
@@ -363,20 +417,24 @@ export const Layout = ({
               }
 
               .kinde-control-label {
-                color: #1a1a1a;
-                font-size: 14px;
-                line-height: 20px;
-                letter-spacing: -0.14px;
+                color: #000;
+                font-size: 16px;
+                line-height: normal;
+                font-weight: 400;
                 padding-block-end: 4px;
               }
 
               .kinde-button-variant-primary {
-                background-color: #d4352b;
+                background-color: #1a1a1a;
               }
 
               .kinde-button-variant-primary:hover {
-                background-color: #aa2a22;
+                background-color: #333;
               }
+
+              .kinde-button-variant-secondary {
+                background-color: #fff;
+              }            
 
               .kinde-control-select-text:focus-visible {
                 border: 0.0625rem solid #ababab;
@@ -384,10 +442,11 @@ export const Layout = ({
               }
 
               .kinde-button-text {
-                font-size: 18px;
-                line-height: 28px;
+                font-size: 20px;
+                font-style: normal;
+                line-height: 120%;
                 letter-spacing: -0.36px;
-                font-weight: 600;
+                font-weight: 400;
               }
 
               .kinde-text-button {
@@ -395,14 +454,37 @@ export const Layout = ({
               }
 
               .kinde-choice-separator {
-                color: #1a1a1a;
-                line-height: 150%;
+                display: block;
+                text-align: center;
+                color: #1a1a1a;                
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
                 letter-spacing: -0.16px;
+                width: 100%;
+
+                background-image:
+                  linear-gradient(#1a1a1a, #1a1a1a),
+                  linear-gradient(#1a1a1a, #1a1a1a);
+
+                background-size:
+                  calc(50% - 20px) 1px,
+                  calc(50% - 20px) 1px;
+
+                background-position:
+                  left center,
+                  right center;
+
+                background-repeat: no-repeat;
               }
 
               .kinde-fallback-action {
-                color: #1a1a1a;
-                line-height: 150%;
+                color: #1a1a1a;                
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
                 letter-spacing: -0.16px;
               }
 
@@ -413,7 +495,7 @@ export const Layout = ({
               }
 
               .kinde-text-link {
-                font-weight: 600;
+                font-weight: 400;
               }
 
               .side-panel {
@@ -659,12 +741,21 @@ export const Layout = ({
           }}
         />
       </head>
-      <body style={{ display: 'flex', flexDirection: 'column' }}>
+      <body
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
         {logo && (
-          <header>
+          <header
+            style={{
+              position: 'absolute',
+              top: '40px',
+              left: '40px',
+            }}>
             <div className='header-container'>
               <div className='header-content'>
-                <a href='https://www.kitchenwarehouse.com.au/'>
+                <a href='https://www.wolstead.com/'>
                   <div className='logo-wrapper'>
                     <picture>
                       <source
@@ -675,29 +766,12 @@ export const Layout = ({
                         className='logo'
                         src={logo}
                         alt={context.widget.content.logoAlt}
-                        width={152}
+                        width={186.794}
                         height={32}
                       />
                     </picture>
                   </div>
                 </a>
-                <div className='secure-login-container'>
-                  <div className='secure-login'>Secure login</div>
-                  <svg
-                    width='24'
-                    height='24'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth='1.5'>
-                    <path
-                      d='M16.5 10.5V6.75C16.5 4.26472 14.4853 2.25 12 2.25C9.51472 2.25 7.5 4.26472 7.5 6.75V10.5M6.75 21.75H17.25C18.4926 21.75 19.5 20.7426 19.5 19.5V12.75C19.5 11.5074 18.4926 10.5 17.25 10.5H6.75C5.50736 10.5 4.5 11.5074 4.5 12.75V19.5C4.5 20.7426 5.50736 21.75 6.75 21.75Z'
-                      stroke='currentColor'
-                      strokeWidth='1.5'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'></path>
-                  </svg>
-                </div>
               </div>
             </div>
           </header>
@@ -708,6 +782,7 @@ export const Layout = ({
           className='content-container'>
           {children}
         </main>
+
         <footer>
           <div style={{ paddingBottom: '2.5rem' }}>
             {/* separator */}
@@ -736,7 +811,6 @@ export const Layout = ({
                 {helpText && (
                   <span
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       fontSize: '0.875rem',
                       lineHeight: '1.25rem',
                       letterSpacing: '-0.14px',
@@ -753,7 +827,6 @@ export const Layout = ({
                       style={{ color: '#1a1a1a' }}>
                       <span
                         style={{
-                          fontFamily: 'Inter, sans-serif',
                           fontSize: '0.875rem',
                           lineHeight: '1.25rem',
                           letterSpacing: '-0.14px',

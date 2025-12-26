@@ -49,7 +49,11 @@ const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
             {context.widget.content.heading && (
               <h2 className='heading'>{context.widget.content.heading}</h2>
             )}
-            <p className='description'>{context.widget.content.description}</p>
+            {context.widget.content.description && (
+              <p className='description'>
+                {context.widget.content.description}
+              </p>
+            )}
             {getKindeWidget()}
           </div>
           {signInFormTextBottom && isUserOnLoginOrRegisterPage === 'login' && (
