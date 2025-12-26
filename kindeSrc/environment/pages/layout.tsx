@@ -546,21 +546,7 @@ export const Layout = ({
 
               .kinde-text-link {
                 font-weight: 400;
-              }
-
-              .side-panel {
-                display: flex;
-                height: 100%;
-                margin: 0 -20px;
-                
-                .side-panel-image {
-                  width: 100%;
-                  height: 100%;
-                  aspect-ratio: 1;
-                  object-fit: cover;
-                  border-radius: 4px;
-                }
-              }
+              }              
 
               /* Loading Styles */
               .auth-loading-overlay {

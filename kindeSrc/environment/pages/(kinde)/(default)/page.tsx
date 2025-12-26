@@ -32,9 +32,16 @@ const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
       <style nonce={getKindeNonce()}>
         {`
 			  .side-panel {
-            display: flex;
+          display: flex;
+          height: 100%;
+          margin: 0 -20px;
+
+					.side-panel-image {
+            width: 100%;
             height: 100%;
-            margin: 0 -20px;
+            aspect-ratio: 1;
+            object-fit: cover;
+          }
 				}		
 			`}
       </style>
