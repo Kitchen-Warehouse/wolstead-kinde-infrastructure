@@ -4,6 +4,7 @@ import {
   getKindeWidget,
   fetch,
   type KindePageEvent,
+  getKindeNonce,
 } from '@kinde/infrastructure'
 import React from 'react'
 import { renderToString } from 'react-dom/server.browser'
@@ -27,62 +28,79 @@ const DefaultPage: React.FC<KindePageEvent> = async ({ context, request }) => {
   const isUserOnLoginOrRegisterPage = request?.route?.flow
 
   return (
-    <Layout
-      context={context}
-      request={request}
-      props={res?.data?.results?.[0]?.data}>
-      <div className='container'>
-        <div className='login-form-wrapper'>
-          {signInFormTextTop && isUserOnLoginOrRegisterPage === 'login' && (
-            <div
-              className='signInFormTextTopText'
-              dangerouslySetInnerHTML={{ __html: `${signInFormTextTop}` }}
-            />
-          )}
-          {signupFormTextTop && isUserOnLoginOrRegisterPage === 'register' && (
-            <div
-              className='signupFormTextTopText'
-              dangerouslySetInnerHTML={{ __html: `${signupFormTextTop}` }}
-            />
-          )}
-          <div className='login-form'>
-            {context.widget.content.heading && (
-              <h2 className='heading'>{context.widget.content.heading}</h2>
-            )}
-            {context.widget.content.description && (
-              <p className='description'>
-                {context.widget.content.description}
-              </p>
-            )}
-            {getKindeWidget()}
-          </div>
-          {signInFormTextBottom && isUserOnLoginOrRegisterPage === 'login' && (
-            <div
-              className='signInFormTextBottomText'
-              dangerouslySetInnerHTML={{ __html: `${signInFormTextBottom}` }}
-            />
-          )}
-          {signupFormTextBottom &&
-            isUserOnLoginOrRegisterPage === 'register' && (
+    <>
+      <style nonce={getKindeNonce()}>
+        {`
+			  .side-panel {
+            display: flex;
+            height: 100%;
+            margin: 0 -20px;
+				}		
+			`}
+      </style>
+      <Layout
+        context={context}
+        request={request}
+        props={res?.data?.results?.[0]?.data}>
+        <div className='container'>
+          <div className='login-form-wrapper'>
+            {signInFormTextTop && isUserOnLoginOrRegisterPage === 'login' && (
               <div
-                className='signupFormTextBottom'
-                dangerouslySetInnerHTML={{ __html: `${signupFormTextBottom}` }}
+                className='signInFormTextTopText'
+                dangerouslySetInnerHTML={{ __html: `${signInFormTextTop}` }}
               />
             )}
-        </div>
-        {loginPageImage && (
-          <div className='side-panel'>
-            <picture>
-              <img
-                className='side-panel-image'
-                src={loginPageImage}
-                alt='image'
-              />
-            </picture>
+            {signupFormTextTop &&
+              isUserOnLoginOrRegisterPage === 'register' && (
+                <div
+                  className='signupFormTextTopText'
+                  dangerouslySetInnerHTML={{ __html: `${signupFormTextTop}` }}
+                />
+              )}
+            <div className='login-form'>
+              {context.widget.content.heading && (
+                <h2 className='heading'>{context.widget.content.heading}</h2>
+              )}
+              {context.widget.content.description && (
+                <p className='description'>
+                  {context.widget.content.description}
+                </p>
+              )}
+              {getKindeWidget()}
+            </div>
+            {signInFormTextBottom &&
+              isUserOnLoginOrRegisterPage === 'login' && (
+                <div
+                  className='signInFormTextBottomText'
+                  dangerouslySetInnerHTML={{
+                    __html: `${signInFormTextBottom}`,
+                  }}
+                />
+              )}
+            {signupFormTextBottom &&
+              isUserOnLoginOrRegisterPage === 'register' && (
+                <div
+                  className='signupFormTextBottom'
+                  dangerouslySetInnerHTML={{
+                    __html: `${signupFormTextBottom}`,
+                  }}
+                />
+              )}
           </div>
-        )}
-      </div>
-    </Layout>
+          {loginPageImage && (
+            <div className='side-panel'>
+              <picture>
+                <img
+                  className='side-panel-image'
+                  src={loginPageImage}
+                  alt='image'
+                />
+              </picture>
+            </div>
+          )}
+        </div>
+      </Layout>
+    </>
   )
 }
 
